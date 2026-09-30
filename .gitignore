@@ -27,6 +27,10 @@ data/icmr/pdfs/
 *.log
 .DS_Store
 
+# Eval
+evals/runs/
+evals/reports/
+
 # local editor stubs
 .latentcode/*
 !.latentcode/skills/
@@ -34,4 +38,4 @@ data/icmr/pdfs/
 .opencode
 
 #intial problem statement draft
-problem-statement.md
+session-ses_fb09.md

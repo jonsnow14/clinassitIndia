@@ -1,0 +1,9 @@
+{"id": "A-BEDS-ICU", "schema_version": "1.0.0", "suite": "agents", "fn": "list_beds", "args": {"need": "icu"}, "expect": {"ordered_ids_prefix": ["gmch-purnea", "galaxy-heart-purnia", "sadar-purnia"], "first_n_accepts_nstemi": 3, "never_before_nstemi": ["sdh-banmankhi", "chc-kasba"]}}
+{"id": "A-BEDS-O2", "schema_version": "1.0.0", "suite": "agents", "fn": "list_beds", "args": {"need": "oxygen"}, "expect": {"ordered_ids_prefix": ["gmch-purnea", "sadar-purnia", "galaxy-heart-purnia"]}}
+{"id": "A-PHARM-DAPT", "schema_version": "1.0.0", "suite": "agents", "fn": "search", "args": {"meds": ["aspirin", "clopidogrel"]}, "expect": {"ordered_ids_prefix": ["pmbjk-khajanchi", "pmbjk-kasba", "pmbjk-line-bazar", "priv-gupta"]}}
+{"id": "A-PHARM-ISOSORBIDE", "schema_version": "1.0.0", "suite": "agents", "fn": "search", "args": {"meds": ["isosorbide"]}, "expect": {"ordered_ids_prefix": ["pmbjk-line-bazar"]}}
+{"id": "A-TX-O2", "schema_version": "1.0.0", "suite": "agents", "fn": "dispatch_transport", "args": {"kind": "ambulance", "need_oxygen": true}, "expect": {"vehicle_id": "amb-108-1", "has_trip_id": true}}
+{"id": "A-TX-NO-UNAVAIL", "schema_version": "1.0.0", "suite": "agents", "fn": "list_transport", "args": {}, "expect": {"ids_must_not_contain": ["amb-dh"], "ordered_ids_prefix": ["amb-108-1", "amb-private", "amb-108-2"]}}
+{"id": "A-EXP-ORDER", "schema_version": "1.0.0", "suite": "agents", "fn": "list_experts", "args": {}, "expect": {"ordered_ids_prefix": ["exp-cardio-1", "exp-cardio-2", "exp-med-1"]}}
+{"id": "A-SOS-SEC", "schema_version": "1.0.0", "suite": "agents", "fn": "raise_sos", "args": {"reason": "security"}, "expect": {"contact_ids": ["sos-thana", "sos-sdm"]}}
+{"id": "A-SOS-COM", "schema_version": "1.0.0", "suite": "agents", "fn": "raise_sos", "args": {"reason": "community"}, "expect": {"contact_ids": ["sos-thana", "sos-asha", "sos-vol"], "ids_must_not_contain": ["sos-sdm"]}}

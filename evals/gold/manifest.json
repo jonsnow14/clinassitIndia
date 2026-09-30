@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "gold_version": "2026-08-30.v1",
+  "census": {
+    "n_retrieval_raw": 12,
+    "n_retrieval_fusion": 4,
+    "n_clinical": 12,
+    "n_agents": 9,
+    "n_suggested": 4,
+    "n_scenarios": 4,
+    "n_adversarial": 4
+  },
+  "index_fingerprint": {
+    "collection": "icmr_stws",
+    "count": 246,
+    "count_tolerance": 0,
+    "pdfs": {
+      "nstemi.pdf": {"chunks": 12, "tolerance": 0},
+      "endocrinology.pdf": {"chunks": 56, "tolerance": 0},
+      "stemi_npncd_2022.pdf": {"chunks": 103, "tolerance": 0},
+      "cardiology_all.pdf": {"chunks": 75, "tolerance": 0}
+    },
+    "forbidden_pdfs": ["hf.pdf"],
+    "unknown_extra_pdfs": "fail",
+    "skip_non_pdf": ["hf.pdf"],
+    "sample_hashes": [
+      {"id_prefix": "nstemi-p1-", "sha256_16": "filled-at-E1"}
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "urgency": "urgent",
+  "assessment": [
+    "45M SOB 3 din",
+    "BP 160/100",
+    "diabetes",
+    "troponin elevated"
+  ],
+  "diagnosis": {
+    "name": "Unstable angina / NSTEMI",
+    "icd10": "I20.0",
+    "confidence": 0.72
+  },
+  "steps": [
+    {"n": 1, "title": "ECG", "detail": "12-lead now at PHC"},
+    {"n": 2, "title": "Aspirin 325 mg", "detail": "chew loading dose"},
+    {"n": 3, "title": "Clopidogrel 300 mg", "detail": "load, then 75 mg OD"}
+  ],
+  "do_nots": [
+    "NSAIDs (diclofenac/ibuprofen) mat do",
+    "Routine oxygen mat do agar SpO2 >= 94%"
+  ],
+  "referral": {
+    "required": true,
+    "urgency": "urgent",
+    "destination": "District Hospital / PCI-capable centre",
+    "slip": "NSTEMI — refer with ECG/troponin",
+    "golden_hour_min": 90
+  },
+  "sources": [
+    {
+      "n": 1,
+      "stw_title": "ICMR STW Unstable Angina / NSTEMI",
+      "section": "PHC/CHC",
+      "quote": "Aspirin: Loading dose 325 mg followed by 75 mg OD",
+      "pdf": "nstemi.pdf"
+    }
+  ],
+  "suggested_actions": ["beds", "transport", "pharmacy", "expert", "sos"],
+  "disclaimer": "ClinAssist output is decision support only. Final clinical judgment rests with the treating clinician.",
+  "retrieval": {"chunk_count": 6, "top_score": 0.7}
+}
