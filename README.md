@@ -23,12 +23,13 @@ This checkout is a one-node POC: human-triggered agents,Indic input, ICMR for cl
 ## Table of contents
 
 1. [Project description](#project-description)
-2. [How to reproduce](#how-to-reproduce)
-3. [Architecture](#architecture)
-4. [What problem it solves](#what-problem-it-solves)
-5. [Test prompts](#test-prompts)
-6. [Existing constraints](#existing-constraints)
-7. [Future roadmap](#future-roadmap)
+2. [Active branches](#active-branches)
+3. [How to reproduce](#how-to-reproduce)
+4. [Architecture](#architecture)
+5. [What problem it solves](#what-problem-it-solves)
+6. [Test prompts](#test-prompts)
+7. [Existing constraints](#existing-constraints)
+8. [Future roadmap](#future-roadmap)
 
 ---
 
@@ -48,6 +49,17 @@ Clinical path: Hinglish in → extract English facts (`sarvam-105b`) → MiniLM 
 | FHIR | Silent ABDM-style `Encounter` / `MedicationRequest` / `ServiceRequest` on disk |
 
 Demo geography is **PHC Khajanchi Hat, Purnia, Bihar (PIN 854301)**. Agents fire only from UI buttons or slash commands (`/clinical`, `/beds`, `/transport`, `/pharmacy`, `/expert`, `/sos`).
+
+---
+
+## Active branches
+
+| Branch | Objective | Status |
+|---|---|---|
+| `main` | The line that ships the PHC workspace: the clinical card, the human-triggered ops agents, and the eval skeleton merged from `pr1-eval-skeleton`. The work on this branch now is the written record of that merge ([docs/pr1-eval-skeleton.md](docs/pr1-eval-skeleton.md)) and this branch table. | active |
+| `pr1-eval-skeleton` | Add the E0 eval harness: gold schema, nine Purnia ops rows, four suggested-action rows, unit journeys, and a pull-request job that runs `pytest -m unit` with no Sarvam call and no Chroma. No further work is on this branch. Its tip `f582ec7` is contained in `main` at merge `a7c1de4`. | merged |
+| `eval` | Hold the eval-pipeline design checkpoint (`3ba1d2a`, 2026-09-04) before the skeleton tests. No further work is on this branch. Those commits are already in `main` through `pr1-eval-skeleton`. | merged |
+| `clinassitIndia-mock-rag` | Keep the earlier hackathon tree as an orphan history: LlamaIndex RAG, a FastAPI `backend/`, and a Next.js `frontend/`. It does not share history with `main`. No commits are being added. | kept |
 
 ---
 
